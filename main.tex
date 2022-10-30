@@ -1,0 +1,101 @@
+\documentclass[12pt, a4paper]{article}
+\usepackage[utf8]{vietnam}
+\usepackage{mathptmx}
+
+% lib component
+\usepackage{tikz}
+\usepackage{amsmath}
+\usepackage{tikz-cd}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphics}
+\usepackage{array}
+\usepackage{cases}
+\usepackage{mdframed}
+\usepackage{fancybox}
+\usepackage{enumerate}
+\usepackage{diagbox}
+\usepackage{soul}
+\usepackage{caption}
+\usepackage{floatrow}
+\usepackage{scrextend}
+\usepackage{tikz} 
+\usepackage{scrextend}
+\usepackage{fancyhdr}
+\usepackage{amsmath}
+\usepackage[thref,thmmarks,standard,amsmath,hyperref]{ntheorem}
+\usepackage{multicol}
+% ----- Theorem:
+%\theoremstyle{definition}
+%\newtheorem{definition}{Định nghĩa}[section]
+
+%\theoremstyle{definition}
+%\newtheorem{theorem}{Định lý}[section]
+%\newtheorem*{remark}{Nhận xét}
+%\newtheorem{vd}{Ví dụ}[section]
+%\newtheorem{bt}{Bài tập}[section]
+%\newtheorem{tc}{Tính chất}[section]
+%\newtheorem{md}{Mệnh đề}[section]
+%\newtheorem{cy}{Chú ý}[section]
+%\newtheorem{nx}{Nhận xét}[section]
+
+% ----- Constant:
+\input{constants/bookInfor}
+
+% ----- Style:
+\usepackage{xcolor}
+\usepackage[left=3.5cm, right=2cm, top=3.5cm, bottom=3cm]{geometry}
+\usepackage[colorlinks=true, allcolors=black, unicode]{hyperref}
+\changefontsizes[18pt]{13pt}
+\setlength{\parindent}{0.6cm}
+\usepackage{indentfirst}
+\setlength{\parskip}{2pt}
+\renewcommand{\baselinestretch}{1.4}
+\setlength{\baselineskip}{18truept}
+\renewcommand{\headrulewidth}{0.5pt}
+\renewcommand{\footrulewidth}{0.5pt}
+\usepackage[]{hyperref}
+
+% ----- Format:
+\pagestyle{fancy}
+\fancyhf{}
+\usepackage{enumerate}
+\usepackage{enumitem}
+\lhead{\normalsize \projects}
+\rhead{\normalsize \project}
+\lfoot{\normalsize \author - \mssv}
+\rfoot{Trang \thepage}
+% \renewcommand\thesection{Chương \Roman{section}}
+% \renewcommand\thesubsection{\arabic{subsection}}
+
+% ----- Mục lục:
+\newcommand{\nocontentsline}[3]{}
+\newcommand{\tocless}[2]{\bgroup\let\addcontentsline=\nocontentsline#1{#2}\egroup}
+
+% ------------------------------------------------------- %
+
+\begin{document}
+    	% ----- Trang bìa:
+        \input{component/TitlePage/index}
+	
+        % ----- Nhận xét của Giáo viên
+        % \input{component/CommentTeacher/index}
+        
+        % ----- Lời nói đầu:
+        % \input{component/Preface/index}
+        
+        % ----- Mục lục:
+        \tableofcontents	
+        
+        % ----- Kí hiệu và từ viết tắt:
+        % \input{component/Symbols/index}
+    
+        % ----- Nội dung chính
+        % \input{component/MainConcept/index}
+        
+        % ----- Kết luận
+        % \input{component/Conclusion/index}
+        
+        % ----- Tài liệu tham khảo
+        % \input{component/References/index}
+\end{document}

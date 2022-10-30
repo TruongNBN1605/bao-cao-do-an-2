@@ -1,0 +1,42 @@
+\begin{titlepage}
+	\begin{tikzpicture}[remember picture,overlay,inner sep=0,outer sep=0]
+		\draw[blue!70!black,line width=5pt] 
+		([xshift=-2cm,yshift=-2cm]current page.north east) coordinate (A)--
+		([xshift=2cm,yshift=-2cm]current page.north west) coordinate(B)--
+		([xshift=2cm,yshift=2cm]current page.south west) coordinate (C)--
+		([xshift=-2cm,yshift=2cm]current page.south east) coordinate(D)--cycle;
+		
+		\draw ([yshift=0.5cm,xshift=-0.5cm]A)-- ([yshift=0.5cm,xshift=0.5cm]B)-- ([yshift=-0.5cm,xshift=0.5cm]B) --([yshift=-0.5cm,xshift=-0.5cm]B)--([yshift=0.5cm,xshift=-0.5cm]C)--([yshift=0.5cm,xshift=0.5cm]C)--([yshift=-0.5cm,xshift=0.5cm]C)-- ([yshift=-0.5cm,xshift=-0.5cm]D)--([yshift=0.5cm,xshift=-0.5cm]D)--([yshift=0.5cm,xshift=0.5cm]D)--([yshift=-0.5cm,xshift=0.5cm]A)--([yshift=-0.5cm,xshift=-0.5cm]A)--([yshift=0.5cm,xshift=-0.5cm]A);
+		
+		
+		\draw ([yshift=-0.3cm,xshift=0.3cm]A)-- ([yshift=-0.3cm,xshift=-0.3cm]B)--
+		([yshift=0.3cm,xshift=-0.3cm]B) --([yshift=0.3cm,xshift=0.3cm]B)--([yshift=-0.3cm,xshift=0.3cm]C)--([yshift=-0.3cm,xshift=-0.3cm]C)--([yshift=0.3cm,xshift=-0.3cm]C)-- ([yshift=0.3cm,xshift=0.3cm]D)--([yshift=-0.3cm,xshift=0.3cm]D)--([yshift=-0.3cm,xshift=-0.3cm]D)--([yshift=0.3cm,xshift=-0.3cm]A)--([yshift=0.3cm,xshift=0.3cm]A)--([yshift=-0.3cm,xshift=0.3cm]A);
+	\end{tikzpicture}
+	\begin{center}
+		\begin{large}
+			\textbf{\SCHOOL}\\
+			\textbf{\INSTITUTE}\\
+		\end{large}
+		\centerline{--------------------o0o--------------------}
+		\vspace{0.5cm}
+		\includegraphics[scale=0.6]{images/logo.jpg}\\
+		\vspace{0.5cm}
+		{\fontsize{28pt}{1}\selectfont \textbf{\PROJECT}}\\
+		\vspace{0.5cm}
+		{\fontsize{16pt}{1}\selectfont \textbf{ĐỒ ÁN II}}\\
+		{\fontsize{13pt}{1}\selectfont \textbf{Chuyên ngành: TOÁN TIN}}\\
+		{\fontsize{13pt}{1}\selectfont \textbf{\textcolor{red}{Chuyên sâu: \projects}}}
+	\end{center}
+	\vspace{0.5cm}
+	\begin{center}
+		\begin{tabular}{ll}
+			Giảng viên hướng dẫn & : \textbf{\INSTRUCTOR}\\
+			Nhóm sinh viên thực hiện & : \textbf{\author}\\
+			MSSV & : \textbf{20185418}\\
+		\end{tabular}
+	\end{center}
+	\vspace{0.5cm}
+	\begin{center}
+		{\bf HÀ NỘI, tháng 12/2022}
+	\end{center}
+\end{titlepage}
