@@ -1,1 +1,45 @@
-\section{Giới thiệu về React và ReactNative}
+\section{Giới thiệu về React Native}
+
+\subsection{Giới thiệu}
+React Native là một Framework, do công ty Công nghệ Meta (trước đây là Facebook) phát triển, nhằm giải quyết vấn đề về hiệu năng và việc phải sử dụng nhiều ngôn ngữ native trên nền tảng di động.
+\newline
+React Native cho phép xây dựng và phát triển ứng dụng native đa nền tảng một cách dễ dàng, khác với HTML5 App, Mobile Web App, Hybrid App. Mục đích khi tạo ra React Native là khắc phục các điểm yếu của ứng dụng web, giúp cho nhà lập trình tiết kiệm thời gian, công sức bởi sự hỗ trợ đắc lực từ JavaScript.
+\newline
+React Native là một trong những framework sử dụng cấu hình thiết kế tương tự như React. Có thể nói, biết về React là biết được 80\% về React Native. Tuy nhiên, đồ án này sẽ trình bày đủ các thông tin cả về React.
+
+\subsection{Lịch sử phát triển}
+Năm 2012 Mark Zuckerberg đã phát biểu: "Sai lầm lớn nhất của chúng tôi khi làm công ty là dựa trên quá nhiều HTML hơn là môi trường phát triển gốc". Ông hứa rằng Facebook sẽ sớm cung cấp trải nghiệm di động tốt hơn.
+\newline
+Kỹ sư Jordan Walke tại Facebook đã tìm ra cách xây dựng các thành phần UI cho iOS bằng một luồng JavaScript. Họ quyết định tổ chức cuộc thi Hackathon để hoàn thiện nguyên mẫu hệ thống để có thể xây dựng các ứng dụng di động gốc (native app) bằng công nghệ này.
+\newline
+Sau nhiều tháng phát triển, Facebook đã phát hành phiên bản đầu tiên cho React Native vào năm 2015. Trong một cuộc hội thảo công nghệ, Christopher Chedeau cho biết Facebook đã sử dụng React Native trong phát triển ứng dụng nhóm và ứng dụng quản lí quảng cáo của họ.
+\newline
+Với cộng đồng phát triển ứng dụng lớn, ngày nay React Native trở thành framework được ưa chuông trong việc xây dựng ứng dụng native.
+
+\subsection{Lý do React Native được ưa chuộng}
+Để biết tại sao React Native lại được ưa chuộng, ta đề cập đến các ứng dụng phổ biến trước đây là Hybrid Apps. Hybrid App được hiểu là ứng dụng được xây dựng dựa trên các công nghệ web phổ biến là CSS, Javascript, HTML. Như vậy, ứng dụng được xây dựng lớn, cần phát triển lâu dài thì sẽ không đảm bảo được hiệu năng.
+% Trong khi đó, Native App có thể nâng cao tương tác nhanh hơn do chúng được xây dựng với framework có nguồn gốc phát triển từ platform. Từ đó, Native App có khả năng hoạt động ở chế độ ngoại tuyến, có thể tiếp cận cả với những khách hàng không có internet.
+\newline
+Trong khi đó, React Native lại có những ưu điểm sau:
+\begin{enumerate}
+    \item {Tiết kiệm thời gian học:} Việc học từng loại ngôn ngữ cho từng nền tảng thường rất khó và mất nhiều thời gian. Tuy nhiên với React Native, lập trình viên chỉ cần học duy nhất một bộ công cụ.
+    \item {Tái sử dụng code:} Trong lập trình phần mềm, React Native là công cụ tái sử dụng code hiệu quả nhất mang lại các lợi thế như duy trì ít code, tận dụng tốt nguồn nhân lực,\dots
+    \item {Hot reloading:} Khi phát triển ứng dụng, nhà phát triển không tốn quá nhiều thời gian để tổng hợp app mỗi khi có sự thay đổi mà chỉ cần làm mới app trong thiết bị hoặc giả lập
+\end{enumerate}
+Chính vì lý do trên mà hiện nay, React Native  đang dần trở thành lựa chọn số một cho công việc xây dựng app của hầu hết các công ty lớn. Cũng từ việc được ưa chuộng khiến cho cộng đồng phát triển lớn, từ đó tạo thành vòng lặp khiến các nhà phát triển mới tiếp cận đều chon React Native.
+
+\subsection{Nguyên lý hoạt động}
+Về cơ bản, React Native hoạt động bằng cách tích hợp cho ứng dụng đi động 2 thread là JS thread và Main thread.
+\begin{enumerate}
+    \item{\textit{Main thread}}: giữ vai trò cập nhật giao diện người dùng UI và xử lý các tương tác của người dùng ngay sau đó.
+    \item{\textit{JS thread}}: thực thi và xử lý các code JavaScript.
+\end{enumerate}
+Hai thread này hoạt động độc lập với nhau và giao tiếp qua một cầu nối trung gian.
+
+\subsection{Một số ứng dụng sử dụng react native}
+Với việc được ưa chuộng và có cộng đồng phát triển lớn, thế giới càng ngày càng có nhiều ứng dụng sử dụng React Native ra đời. Một số ứng dụng có thể kế đến như sau:
+\begin{enumerate}
+    \item {\textit{Facebook:}} là công ty phát triển React Native, sau khi phát triển xong framework này, Meta đã chuyển đổi tính năng Event Dashboard cho iOS sang React Native để kiểm tra hiệu suất ứng dụng, từ đó cắt giảm thời gian tìm hiểu thị trường đi một nửa
+    \item {\textit{Facebook Ads:}} Đến thời điểm hiện tại, tất cả ứng dụng quảng cáo trên Facebook đều được sử dụng React Native.
+    \item {\textit{Instagram:}} Sau khi được Meta mua lại, ứng dụng này cũng được chuyển đổi sử dụng React Native, cụ thể chế độ Push Notifications đã được triển khai dưới dạng WebView và không yêu cầu xây dựng cơ sở hạ tầng Navigation vì UI khá đơn giản.
+\end{enumerate}
