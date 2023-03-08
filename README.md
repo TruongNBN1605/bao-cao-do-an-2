@@ -16,3 +16,4 @@ Tài liệu tham khảo:
 https://teamvietdev.com/thanh-phan-kien-truc-android/
 https://vi.wikipedia.org/wiki/React_Native
 https://reactnative.dev/docs
+https://vietnix.vn/nodejs-la-gi/
