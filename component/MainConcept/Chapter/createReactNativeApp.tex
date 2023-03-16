@@ -18,7 +18,7 @@
     Sau khi cài đặt xong, có thể kiểm tra lại bằng cách chạy dòng lệnh trong terminal:
     \begin{figure}[!ht]
         \centering
-        \includegraphics[scale=0.5]{images/checkNodeJS.png}
+        \includegraphics[width=1\textwidth]{images/checkNodeJS.png}
         \caption{Cài đặt NodeJs}
     \end{figure}
 \end{enumerate}
@@ -43,7 +43,7 @@
     Sau khi cài đặt xong, có thể kiểm tra lại bằng cách chạy dòng lệnh trong terminal:
     \begin{figure}[!ht]
         \centering
-        \includegraphics[scale=0.5]{images/checkJDK.png}
+        \includegraphics[width=1\textwidth]{images/checkJDK.png}
         \caption{Cài đặt JDK}
     \end{figure}
 \end{enumerate}
@@ -85,14 +85,14 @@
 Nếu trước đó thiết bị đã cài đặt gói react-native-cli toàn cầu, chúng ta cần xóa gói này vì gói đó có thể gây ra các sự cố không mong muốn:
 \begin{figure}[!ht]
     \centering
-    \includegraphics[scale=0.5]{images/deleteReactnativeCLI.png}
+    \includegraphics[width=1\textwidth]{images/deleteReactnativeCLI.png}
     \caption{Xoá gói React Native CLI}
 \end{figure}
 
 Để bắt đầu xây dựng chương trình, ta tạo thư mục cho project này. Cụ thể, tôi đặt "HelloWorld". Sau đó mở thư mục đó bằng Android Studio, chạy dòng lệnh sau trên terminal:
 \begin{figure}[!ht]
     \centering
-    \includegraphics[scale=0.5]{images/createFirstApp.png}
+    \includegraphics[width=1\textwidth]{images/createFirstApp.png}
     \caption{Khởi tạo ứng dụng React Native}
 \end{figure}
 
@@ -123,11 +123,12 @@ Công việc tiếp theo là chạy ứng dụng FirstApp đã khởi tạo trê
     Tiếp theo cần kết nối thiết bị Android với thiết bị phát triển ứng dụng qua USB. Sau đó, kiểm tra lại thiết bị đã bật gỡ lỗi USB chưa bằng cách chạy dòng lệnh "adb devices".
     \begin{figure}[!ht]
         \centering
-        \includegraphics[scale=0.5]{images/checkDevices.png}
+        \includegraphics[width=1\textwidth]{images/checkDevices.png}
         \caption{Kiểm tra kết nối thiết bị}
     \end{figure}
     \item[\textit{c.}] {\textit{Chạy ứng dụng trên thiết bị}}\\
     Để chạy ứng dụng, ta di chuyển đến FirstApp và chạy dòng lệnh sau: npx react-native run-android.
+    % Ảnh build chạy trên thiết bị
 \end{enumerate}
 \subsubsection{Chạy trên máy ảo}
 \begin{enumerate}
@@ -135,7 +136,7 @@ Công việc tiếp theo là chạy ứng dụng FirstApp đã khởi tạo trê
     Trước hết ta cần tạo AVD mới bằng Android Studio. Ta vào mục \textbf{Device Manager} → \textbf{Create device}
     \begin{figure}[!ht]
         \centering
-        \includegraphics[scale=0.5]{images/createAVD.png}
+        \includegraphics[width=1\textwidth]{images/createAVD.png}
         \caption{Tạo thiết bị ảo trên Android Studio}
     \end{figure}
     Sau đó, Android Studio hiển thị giao diện cấu hình thiết bị, ta chọn bất kỳ Điện thoại nào từ danh sách và nhấp vào \textbf{Next}, sau đó chọn hình ảnh \textbf{Tiramisu} API Cấp 33. Tiếp theo chọn \textbf{Finish} để tạo thiết bị ảo.
@@ -143,14 +144,94 @@ Công việc tiếp theo là chạy ứng dụng FirstApp đã khởi tạo trê
     Sau khi khởi tạo, ta mở thiết bị ảo trên Android Studio và kiểm tra (giống chạy trên thiết bị vật lý):
     \begin{figure}[!ht]
         \centering
-        \includegraphics[scale=0.5]{images/runAVD.png}
-        \caption{Tạo thiết bị ảo trên Android Studio}
+        \includegraphics[scale=0.3]{images/runAVD.png}
+        \caption{Kiểm tra kết nối thiết bị ảo trên Android Studio}
     \end{figure}
     \item[\textit{c.}] {\textit{Chạy ứng dụng trên AVD}}\\
     Thực hiện chạy ứng dụng trên thiết bị ảo giống trên thiết bị vật lý.
+    % Ảnh build chạy trên thiết bị ảo
 \end{enumerate}
 
 \subsection{Các khái niệm, thành phần}
+\subsubsection{Components}
+Trong quá trình phát triển Android, người ta thường phân giao diện thành các khối hình chữ nhật để thực hiện các chức năng riêng như: hiển thị văn bản, hình ảnh, phản hồi của người dùng,\dots Mỗi một khối như vậy được gọi là View.
+\begin{figure}[!ht]
+    \centering
+    \includegraphics[scale=0.5]{images/nativeViewComponent.png}
+    \caption{View trong giao diện Native}
+\end{figure}
+Đối với React Native, các View trên được gọi là \textit{Component}. Một cách dễ hiểu, để xây dựng ứng dụng React Native, ta cần tập chung mô tả giao diện mong muốn thành các component như trên.\\
+Ta có thể phân loại các components như hình vẽ sau (chứa cả React Component vì React Native được xây dựng dựa trên ReactJS)
+\begin{figure}[!ht]
+    \centering
+    \includegraphics[scale=0.5]{images/reactComponents.png}
+    \caption{Phân loại các component}
+\end{figure}
+\begin{enumerate}
+    \item[\textit{a.}] {\textit{Core Components}}\\
+    Core Components là các component cốt lõi để xây dựng ra các component khác. Các component này điều khiển các hành động cơ bản về giao diện như: hiển thị văn bản, hình ảnh, cho phép người dùng nhập, ấn,\dots\\
+    \begin{figure}[!ht]
+        \centering
+        \includegraphics[width=1\textwidth]{images/coreComponets.png}
+        \caption{Mô tả một số Core Components}
+    \end{figure}
+    Có thể phân loại Core Component như sau:
+    \begin{enumerate}
+        \item[-] {\textit{Basic Components}}: bao gồm các component trong bảng 13.
+        \item[-] {\textit{User Interface}}: Gồm các component điều khiển các hành động của người dùng:
+        \begin{enumerate}
+            \item[+] Button: Xử lý thao tác chạm của người dùng.
+            \item[+] Switch: Xử lý bật/tắt cho một chức năng.
+        \end{enumerate}
+        \item[-] {\textit{List View}}: Không giống như ScrolView, các component này hiển thị nội dung dưới dạng các phần tử. Điều này làm cho chúng trở thành lựa chọn hiệu quả để hiển thị danh sách dữ liệu dài. Bao gồm:
+        \begin{enumerate}
+            \item[+] FlatList: Hiển thị một danh sách có thể cuộn.
+            \item[+] SectionList: Giống FlatList nhưng đối với danh sách được phân đoạn.
+        \end{enumerate}
+        \item[-] {\textit{Android-specific}}: là các component cung cấp các dịch vụ đặc trưng của Android. Bao gồm:
+        \begin{enumerate}
+            \item[+] BackHandler: Phát hiện các nút phần cứng điều hướng quay lại. (Ví dụ: nút back ảo, vuốt cạnh bên,\dots)
+            \item[+] DrawerLayoutAndroid: Tạo một giao diện dạng ngăn kéo trên Android.
+            \item[+] PermissionsAndroid: Cung cấp quyền truy cập đối với Android
+            \item[+] ToastAndroid: Tạo một cảnh báo trên Android
+        \end{enumerate}
+        \item[-] {\textit{iOS-specific}}: là các component cung cấp các dịch vụ đặc trưng của UIKit. (Đồ án này chỉ tìm hiểu về react native và android nên không đi sâu vào IOS, chỉ nêu ra ở đây) 
+        \item[-] {\textit{Other}}: các component thường dùng khác
+        \begin{enumerate}
+            \item[+] ActivityIndicator: Hiển thi giao diện loading xoay tròn
+            \item[+] Alert: Hiển thị hộp thoại thông báo với tiêu đề và nội dung
+            \item[+] Animated: Một thư viện để tạo các hoạt ảnh linh hoạt, mạnh mẽ, dễ xây dựng và bảo trì.
+            \item[+] Dimensions: Cung cấp giao diện để nhận kích thước thiết bị.
+            \item[+] KeyboardAvoidingView: Cung cấp giao diện điều khiển hiển thị bàn phím.
+            \item[+] Linking: Xử lý hành động tương tác với liên kết.
+            \item[+] Modal: Một giao diện nổi phía trên giao diện gốc.
+            \item[+] PixelRatio: Cung cấp quyền truy cập vào mật độ pixel của thiết bị.
+            \item[+] RefreshControl: Thành phần này được sử dụng bên trong ScrollView chức năng thêm kéo để làm mới.
+            \item[+] StatusBar: Thành phần để kiểm soát thanh trạng thái ứng dụng.
+        \end{enumerate}
+    \end{enumerate}
+    Các core component được cung cấp trong package "react-native", vì thế để sử dụng chúng, ta chỉ cần import từ package đó:
+    \begin{figure}[!ht]
+        \centering
+        \includegraphics[width=1\textwidth]{images/coreComponetExample.png}
+        \caption{Ví dụ sử dụng Core Component}
+    \end{figure}
+    \item[\textit{b.}] {\textit{Community Components}}\\
+    Như đã trình bày, cộng đồng phát triển React Native rất lớn, vì thế để phục vụ cho phát triển ứng dụng nhanh chóng, một số nhóm, công ty xây dựng ra các gói, thư viện chứa các component xây dựng sẵn như: ant-design, axios, calendar, react-native-webview,\dots Cụ thể các thư viện này được trình bày tại mục "Một số thư viện phổ biến".\\
+    Để sử dụng được các component này, ta cần cài đặt các thư viện bằng dòng lệnh: npm install <package-name>
+    \begin{figure}[!ht]
+        \centering
+        \includegraphics[width=1\textwidth]{images/installPackage.png}
+        \caption{Cài đặt package - AntDesign}
+    \end{figure}
+    Sau khi cài đặt gói thành công, các component này sử dụng như core component, chỉ cần import và sử dụng.
+    \item[\textit{c.}] {\textit{Your Native Components}}\\
+    Đây là các component do chính người phát triển ứng dụng xây dựng.\\
+    Việc phân chia, xây dựng các component một các chính xác giúp cho ứng dụng được tối ưu, tái sử dụng code một cách hiệu quả
+\end{enumerate}
+\subsubsection{JSX}
+\subsubsection{Props}
+\subsubsection{State}
 
 \subsection{Một số thư viện phổ biến}
 
