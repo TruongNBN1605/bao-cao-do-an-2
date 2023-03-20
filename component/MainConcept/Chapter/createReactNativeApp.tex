@@ -49,8 +49,10 @@
 \end{enumerate}
 \subsubsection{Android Studio}
 \begin{enumerate}
-    \item[\textit{a.}] {\textit{Tổng quan}}\\
-    Android Studio là Môi trường phát triển tích hợp (IDE) chính thức để phát triển ứng dụng Android.\\
+    \item[\textit{a.}] {\textit{Tổng quan}}
+
+    Android Studio là Môi trường phát triển tích hợp (IDE) chính thức để phát triển ứng dụng Android.
+
     Nhờ các công cụ cho nhà phát triển tích hợp trình soạn thảo mạnh mẽ của  \href{https://www.jetbrains.com/idea/}{IntelliJ IDEA}, Android Studio cung cấp các tính năng giúp hỗ trợ và nâng cao năng suất trong quá trình phát triển ứng dụng Android:
     \begin{enumerate}
         \item[-] Hệ thống xây dựng linh hoạt dựa trên Gradle.
@@ -103,7 +105,7 @@ Sau khi chạy dòng lệnh trên, quan sát project, ta thấy thư mục First
     \includegraphics[scale=0.5]{images/firstAppData.png}
     \caption{Dữ liệu FirstApp}
 \end{figure}
-\newline
+
 Công việc tiếp theo là chạy ứng dụng FirstApp đã khởi tạo trên. Có 2 cách để build và chạy ứng dụng react native trong quá trình xây dựng:
 \begin{enumerate}
     \item[-] Chạy trên thiết bị vật lý
@@ -154,85 +156,250 @@ Công việc tiếp theo là chạy ứng dụng FirstApp đã khởi tạo trê
 
 \subsection{Các khái niệm, thành phần}
 \subsubsection{Components}
-Trong quá trình phát triển Android, người ta thường phân giao diện thành các khối hình chữ nhật để thực hiện các chức năng riêng như: hiển thị văn bản, hình ảnh, phản hồi của người dùng,\dots Mỗi một khối như vậy được gọi là View.
-\begin{figure}[!ht]
-    \centering
-    \includegraphics[scale=0.5]{images/nativeViewComponent.png}
-    \caption{View trong giao diện Native}
-\end{figure}
-Đối với React Native, các View trên được gọi là \textit{Component}. Một cách dễ hiểu, để xây dựng ứng dụng React Native, ta cần tập chung mô tả giao diện mong muốn thành các component như trên.\\
-Ta có thể phân loại các components như hình vẽ sau (chứa cả React Component vì React Native được xây dựng dựa trên ReactJS)
-\begin{figure}[!ht]
-    \centering
-    \includegraphics[scale=0.5]{images/reactComponents.png}
-    \caption{Phân loại các component}
-\end{figure}
-\begin{enumerate}
-    \item[\textit{a.}] {\textit{Core Components}}\\
-    Core Components là các component cốt lõi để xây dựng ra các component khác. Các component này điều khiển các hành động cơ bản về giao diện như: hiển thị văn bản, hình ảnh, cho phép người dùng nhập, ấn,\dots\\
+    Trong quá trình phát triển Android, người ta thường phân giao diện thành các khối hình chữ nhật để thực hiện các chức năng riêng như: hiển thị văn bản, hình ảnh, phản hồi của người dùng,\dots Mỗi một khối như vậy được gọi là View.
     \begin{figure}[!ht]
         \centering
-        \includegraphics[width=1\textwidth]{images/coreComponets.png}
-        \caption{Mô tả một số Core Components}
+        \includegraphics[scale=0.5]{images/nativeViewComponent.png}
+        \caption{View trong giao diện Native}
     \end{figure}
-    Có thể phân loại Core Component như sau:
+
+    Đối với React Native, các View trên được gọi là \textit{Component}. Một cách dễ hiểu, để xây dựng ứng dụng React Native, ta cần tập chung mô tả giao diện mong muốn thành các component như trên.
+
+    Ta có thể phân loại các components như hình vẽ sau (chứa cả React Component vì React Native được xây dựng dựa trên ReactJS)
+    \begin{figure}[!ht]
+        \centering
+        \includegraphics[scale=0.5]{images/reactComponents.png}
+        \caption{Phân loại các component}
+    \end{figure}
+
     \begin{enumerate}
-        \item[-] {\textit{Basic Components}}: bao gồm các component trong bảng 13.
-        \item[-] {\textit{User Interface}}: Gồm các component điều khiển các hành động của người dùng:
+        \item[\textit{a.}] {\textit{Core Components}}\\
+        Core Components là các component cốt lõi để xây dựng ra các component khác. Các component này điều khiển các hành động cơ bản về giao diện như: hiển thị văn bản, hình ảnh, cho phép người dùng nhập, ấn,\dots\\
+        \begin{figure}[!ht]
+            \centering
+            \includegraphics[width=1\textwidth]{images/coreComponets.png}
+            \caption{Mô tả một số Core Components}
+        \end{figure}
+        Có thể phân loại Core Component như sau:
         \begin{enumerate}
-            \item[+] Button: Xử lý thao tác chạm của người dùng.
-            \item[+] Switch: Xử lý bật/tắt cho một chức năng.
+            \item[-] {\textit{Basic Components}}: bao gồm các component trong bảng 13.
+            \item[-] {\textit{User Interface}}: Gồm các component điều khiển các hành động của người dùng:
+            \begin{enumerate}
+                \item[+] Button: Xử lý thao tác chạm của người dùng.
+                \item[+] Switch: Xử lý bật/tắt cho một chức năng.
+            \end{enumerate}
+            \item[-] {\textit{List View}}: Không giống như ScrolView, các component này hiển thị nội dung dưới dạng các phần tử. Điều này làm cho chúng trở thành lựa chọn hiệu quả để hiển thị danh sách dữ liệu dài. Bao gồm:
+            \begin{enumerate}
+                \item[+] FlatList: Hiển thị một danh sách có thể cuộn.
+                \item[+] SectionList: Giống FlatList nhưng đối với danh sách được phân đoạn.
+            \end{enumerate}
+            \item[-] {\textit{Android-specific}}: là các component cung cấp các dịch vụ đặc trưng của Android. Bao gồm:
+            \begin{enumerate}
+                \item[+] BackHandler: Phát hiện các nút phần cứng điều hướng quay lại. (Ví dụ: nút back ảo, vuốt cạnh bên,\dots)
+                \item[+] DrawerLayoutAndroid: Tạo một giao diện dạng ngăn kéo trên Android.
+                \item[+] PermissionsAndroid: Cung cấp quyền truy cập đối với Android
+                \item[+] ToastAndroid: Tạo một cảnh báo trên Android
+            \end{enumerate}
+            \item[-] {\textit{iOS-specific}}: là các component cung cấp các dịch vụ đặc trưng của UIKit. (Đồ án này chỉ tìm hiểu về react native và android nên không đi sâu vào IOS, chỉ nêu ra ở đây) 
+            \item[-] {\textit{Other}}: các component thường dùng khác
+            \begin{enumerate}
+                \item[+] ActivityIndicator: Hiển thi giao diện loading xoay tròn
+                \item[+] Alert: Hiển thị hộp thoại thông báo với tiêu đề và nội dung
+                \item[+] Animated: Một thư viện để tạo các hoạt ảnh linh hoạt, mạnh mẽ, dễ xây dựng và bảo trì.
+                \item[+] Dimensions: Cung cấp giao diện để nhận kích thước thiết bị.
+                \item[+] KeyboardAvoidingView: Cung cấp giao diện điều khiển hiển thị bàn phím.
+                \item[+] Linking: Xử lý hành động tương tác với liên kết.
+                \item[+] Modal: Một giao diện nổi phía trên giao diện gốc.
+                \item[+] PixelRatio: Cung cấp quyền truy cập vào mật độ pixel của thiết bị.
+                \item[+] RefreshControl: Thành phần này được sử dụng bên trong ScrollView chức năng thêm kéo để làm mới.
+                \item[+] StatusBar: Thành phần để kiểm soát thanh trạng thái ứng dụng.
+            \end{enumerate}
         \end{enumerate}
-        \item[-] {\textit{List View}}: Không giống như ScrolView, các component này hiển thị nội dung dưới dạng các phần tử. Điều này làm cho chúng trở thành lựa chọn hiệu quả để hiển thị danh sách dữ liệu dài. Bao gồm:
-        \begin{enumerate}
-            \item[+] FlatList: Hiển thị một danh sách có thể cuộn.
-            \item[+] SectionList: Giống FlatList nhưng đối với danh sách được phân đoạn.
-        \end{enumerate}
-        \item[-] {\textit{Android-specific}}: là các component cung cấp các dịch vụ đặc trưng của Android. Bao gồm:
-        \begin{enumerate}
-            \item[+] BackHandler: Phát hiện các nút phần cứng điều hướng quay lại. (Ví dụ: nút back ảo, vuốt cạnh bên,\dots)
-            \item[+] DrawerLayoutAndroid: Tạo một giao diện dạng ngăn kéo trên Android.
-            \item[+] PermissionsAndroid: Cung cấp quyền truy cập đối với Android
-            \item[+] ToastAndroid: Tạo một cảnh báo trên Android
-        \end{enumerate}
-        \item[-] {\textit{iOS-specific}}: là các component cung cấp các dịch vụ đặc trưng của UIKit. (Đồ án này chỉ tìm hiểu về react native và android nên không đi sâu vào IOS, chỉ nêu ra ở đây) 
-        \item[-] {\textit{Other}}: các component thường dùng khác
-        \begin{enumerate}
-            \item[+] ActivityIndicator: Hiển thi giao diện loading xoay tròn
-            \item[+] Alert: Hiển thị hộp thoại thông báo với tiêu đề và nội dung
-            \item[+] Animated: Một thư viện để tạo các hoạt ảnh linh hoạt, mạnh mẽ, dễ xây dựng và bảo trì.
-            \item[+] Dimensions: Cung cấp giao diện để nhận kích thước thiết bị.
-            \item[+] KeyboardAvoidingView: Cung cấp giao diện điều khiển hiển thị bàn phím.
-            \item[+] Linking: Xử lý hành động tương tác với liên kết.
-            \item[+] Modal: Một giao diện nổi phía trên giao diện gốc.
-            \item[+] PixelRatio: Cung cấp quyền truy cập vào mật độ pixel của thiết bị.
-            \item[+] RefreshControl: Thành phần này được sử dụng bên trong ScrollView chức năng thêm kéo để làm mới.
-            \item[+] StatusBar: Thành phần để kiểm soát thanh trạng thái ứng dụng.
-        \end{enumerate}
+        Các core component được cung cấp trong package "react-native", vì thế để sử dụng chúng, ta chỉ cần import từ package đó:
+        \begin{figure}[!ht]
+            \centering
+            \includegraphics[width=1\textwidth]{images/coreComponetExample.png}
+            \caption{Ví dụ sử dụng Core Component}
+        \end{figure}
+        \item[\textit{b.}] {\textit{Community Components}}\\
+        Như đã trình bày, cộng đồng phát triển React Native rất lớn, vì thế để phục vụ cho phát triển ứng dụng nhanh chóng, một số nhóm, công ty xây dựng ra các gói, thư viện chứa các component xây dựng sẵn như: ant-design, axios, calendar, react-native-webview,\dots Cụ thể các thư viện này được trình bày tại mục "Một số thư viện phổ biến".\\
+        Để sử dụng được các component này, ta cần cài đặt các thư viện bằng dòng lệnh: npm install <package-name>
+        \begin{figure}[!ht]
+            \centering
+            \includegraphics[width=1\textwidth]{images/installPackage.png}
+            \caption{Cài đặt package - AntDesign}
+        \end{figure}
+        Sau khi cài đặt gói thành công, các component này sử dụng như core component, chỉ cần import và sử dụng.
+        \item[\textit{c.}] {\textit{Your Native Components}}\\
+        Đây là các component do chính người phát triển ứng dụng xây dựng.\\
+        Việc phân chia, xây dựng các component một các chính xác giúp cho ứng dụng được tối ưu, tái sử dụng code một cách hiệu quả
     \end{enumerate}
-    Các core component được cung cấp trong package "react-native", vì thế để sử dụng chúng, ta chỉ cần import từ package đó:
-    \begin{figure}[!ht]
-        \centering
-        \includegraphics[width=1\textwidth]{images/coreComponetExample.png}
-        \caption{Ví dụ sử dụng Core Component}
-    \end{figure}
-    \item[\textit{b.}] {\textit{Community Components}}\\
-    Như đã trình bày, cộng đồng phát triển React Native rất lớn, vì thế để phục vụ cho phát triển ứng dụng nhanh chóng, một số nhóm, công ty xây dựng ra các gói, thư viện chứa các component xây dựng sẵn như: ant-design, axios, calendar, react-native-webview,\dots Cụ thể các thư viện này được trình bày tại mục "Một số thư viện phổ biến".\\
-    Để sử dụng được các component này, ta cần cài đặt các thư viện bằng dòng lệnh: npm install <package-name>
-    \begin{figure}[!ht]
-        \centering
-        \includegraphics[width=1\textwidth]{images/installPackage.png}
-        \caption{Cài đặt package - AntDesign}
-    \end{figure}
-    Sau khi cài đặt gói thành công, các component này sử dụng như core component, chỉ cần import và sử dụng.
-    \item[\textit{c.}] {\textit{Your Native Components}}\\
-    Đây là các component do chính người phát triển ứng dụng xây dựng.\\
-    Việc phân chia, xây dựng các component một các chính xác giúp cho ứng dụng được tối ưu, tái sử dụng code một cách hiệu quả
-\end{enumerate}
 \subsubsection{JSX}
+    React và React Native sử dụng JSX - một cú pháp cho phép bạn viết các phần tử bên trong JavaScript như sau: <Text>Hello HUST</Text>.
+
+    Vì JSX là JavaScript nên hoàn toàn có thể sử dụng biến hay gọi hàm bên trong nó như hình sau:
+    \begin{figure}[!ht]
+        \centering
+        \includegraphics[width=1\textwidth]{images/JSX.png}
+        \caption{Ví dụ về JSX}
+    \end{figure}
+
+    Vì JSX được bao gồm trong thư viện React, nên để sử dụng JSX trong việc xây dựng các component thì ta cần phải khai báo sử dụng thư viện React trong file của mình (trong ảnh là dòng "import React from 'react';").
+
+    Sau khi có khái niệm cơ bản về Component và JSX, ta hoàn toàn có thể xây dựng một component từ các Core Coponent như ví dụ sau:
+    \begin{figure}[!ht]
+        \centering
+        \includegraphics[width=1\textwidth]{images/customComponent.png}
+        \caption{Ví dụ về JSX}
+    \end{figure}
+
+    Không chỉ đối với component, ta cũng có thể tái sử dụng \textit{CustomComponent} vào các component khác trong ứng dụng.
 \subsubsection{Props}
+    Props - viết tắt của Properties, đây là một khái niệm cơ bản trong lập trình hướng đối tượng. Đây là những thuộc tính cho phép tùy chỉnh các component.
+    \begin{figure}[!ht]
+        \centering
+        \includegraphics[width=1\textwidth]{images/Props.png}
+        \caption{Ví dụ Props trong Component}
+    \end{figure}
+
+    Sau khi có khái niệm về Props, ta có thể thử với các Core Component để hiểu chi tiết về cách sử dụng của chúng.
+
+    \textit{Chú ý}: Props là các properties nhưng k có setter, nó không thay đổi giá trị trong component mà chỉ nhận giá trị truyền vào khi gọi đến component. Cần ghi nhớ điều này vì đây là điều khác biệt lớn nhất khi so sách Props với State.
 \subsubsection{State}
+    Có thể coi props như là đối số để cấu hình cách hiển thị các thành phần, khi đó state giống như bô lưu trữ dữ liệu của các thành phần. Khi State thay đổi cũng làm thay đổi tùy chỉnh của component (thay đổi này có thể theo thời gian hoặc dựa trên tương tác của người dùng). Như đã trình bày khi nói về Props, State là các Properties có đầy đủ cả setter và getter.
+
+    Trong ví dụ sau, component Counter có sử dụng state Count (setter: setCount, getter: count) bằng cách sử dụng React Hook là useState (cụ thể trình bày trong vòng đời component và các thư viện). State Count theo dõi mỗi khi người dùng nhấn vào button, count tăng lên 1 đơn vị, khi đó giá trị count hiển thị thay đổi trên giao diện người dùng.
+    \begin{figure}[!ht]
+        \centering
+        \includegraphics[width=1\textwidth]{images/State.png}
+        \caption{Ví dụ State trong Component}
+    \end{figure}
+\subsubsection{Style}
+    Đối với mỗi phần tử hiển thị trên giao diện người dùng, ta cần điều chỉnh hình thức hiển thị như: có cần đường viền; hiển thị theo chiều dọc hay ngang; chiều dài, chiều rộng bao nhiêu;\dots Để thực hiện nhu cầu này, ta có thể thêm Props là Style cho các component của mình. Style cũng là prop của các Core Component.
+    \begin{figure}[!ht]
+        \centering
+        \includegraphics[width=1\textwidth]{images/StyleConponent.png}
+        \caption{Ví dụ Style trong Component}
+    \end{figure}
+
+    \textit{Chú ý}: Các thuộc tính của style trong ReactNative thông thường được viết giống các thuộc tính CSS nhưng dưới dạng camelcase.
+\subsubsection{Vòng đời của Component}
+    Ta có thể tóm tắt vòng qua sơ đồ dưới đây:
+    \begin{figure}[!ht]
+        \centering
+        \includegraphics[width=1\textwidth]{images/lifeCircle.png}
+        \caption{Sơ đồ vòng đời trong component}
+    \end{figure}
+
+    Cụ thể, vòng đời của một component gồm 3 giai đoạn:
+    \begin{enumerate}
+        \item[\textit{a.}] {\textit{Mounting}}: Là quá trình bắt đầu từ khi gọi đến component, nhận giá trị JSX trả về với props và states khởi tạo đến khi cập nhật giá trị đó lên DOM và thực thi một số yêu cầu được quy định trước.
+        \item[\textit{b.}] {\textit{Updating}}: Sau khi thực thi một số yêu cầu hoặc xử lý tương tác của người dùng khiến giá trị props hoặc state thay đổi, quá trình Updating bắt đầu. Từ các states, props mới, component trả về giá trị JSX mới theo chúng. Sau đó, JSX mới lại tiếp tục được cập nhật vào DOM và đợi cập nhật tiếp theo.
+        \item[\textit{c.}] {\textit{Unmounting}}: Các quá trình cập nhật sẽ tiếp tục diễn ra cho đến khi có cập nhật yêu cầu xóa component này trong DOM, khi đó quá trình Unmounting bắt đầu. Quá trình này thực thi một số yêu cầu của người lập trình đã quy định trước.
+    \end{enumerate}
+
+    Để quy định các yêu cầu thực thi trong các quá trình trên, ta cần khai báo hàm với đúng tên gọi như trong sơ đồ:
+    \begin{enumerate}
+        \item[-] {\textit{Constructor}}: Khai báo Props, khởi tạo các giá trị ban đầu của State
+        \item[-] {\textit{render}}: trả về giá trị JSX phụ thuộc vào state, props.
+        \item[-] {\textit{componentDidMount}}: các yêu cầu thực thi sau khi gán giá trị đầu tiên của component vào DOM.
+        \item[-] {\textit{componentDidUpdate}}: các yêu cầu thực thi sau khi có giá trị mới được cập nhật vào DOM.
+        \item[-] {\textit{componentWillUnmount}}: các yêu cầu thực thi sau khi component được xóa khỏi DOM.
+    \end{enumerate}
+
+    Các hàm trên được gọi trong Class Component - đây là cách định nghĩa component duy nhất từ ES5 trở về trước (ES - viết tắt của ECMAScript là tiêu chuẩn cho ngôn ngữ lập trình JavaScript). Từ ES6 (ở thời điểm tôi viết đồ án này là phiên bản mới nhất của ECMAScript), ta có thể định nghĩa component bằng Function Component. Khi đó, thay vì sử dụng các hàm vòng đời trên, ta có thể sử dụng các hàm React Hook được cung cấp bởi react (chi tiết được trình bày trong mục các thư viện phổ biến).
 
 \subsection{Một số thư viện phổ biến}
+    Ở mục trước, tôi đã nhắc đến Core Component và đưa ra thông tin về các Core Component. Ở mục này, tôi sẽ giới thiệu về Community Components. Như đã nói, các Community Components là các component được cung cấp bởi các gói, các thư viện. Có rất nhiều thư viện như vậy, một số thư viện sau được sử dụng phổ biến trong các phần mềm hiện nay, điều này dựa trên quan sát và kinh nghiệm thực tế của tôi.
+    \subsubsection{React và ReactNative}
+    Chắc chắn rồi, hai thư viện này tồn tại ngay khi khởi tạo một ứng dụng React Native qua dòng lệnh: npx react-native@latest init <project-name>.
+
+    Ngoài các Core Component mà thư viện này cung cấp, ta còn cần sử dụng các hàm React Hook. Khi ES6 ra đời cùng với khái niệm về Function Component, việc phải sử dụng chúng trong các ứng dụng sử dụng ngôn ngữ JavaScript là rất cần thiết bởi đây sẽ là tiêu chuẩn của các ứng dụng sau này.
+
+    Trước hết, về định nghĩa, Hook là một thành phân trong component không sử dụng để hiển thị (khi thay đổi giá trị không gây ra quá trình updating). Đối với các Hook, cần có yêu cầu đều phải bắt đầu bằng "use" và được viết ở đầu trong component.
+    Hook được phân loại bao gồm:
+    \begin{enumerate}
+        \item[-] {\textit{State Hook}}: để đáp ứng mục đích định nghĩa các state trong component. Bao gồm:
+        \begin{enumerate}
+            \item[+] useState: Khai bao một state với getter, setter từ đó có thể trực tiếp cập nhật giá trị.
+            \item[+] useReducer: Khai báo một state với logic cập nhật được định nghĩa trước.
+        \end{enumerate}
+        \item[-] {\textit{Context Hook}}: để đáp ứng nhu cầu cập nhật dựa trên tương tác từ component khác. (Ví dụ khi người dùng thực hiện tương tác với 1 component trên giao diện với nhu cầu xử lý thay đổi một component khác). React hiện tại chỉ cung cấp 1 loại Context Hook là useContext.
+        \item[-] {\textit{Ref Hook}}: Bên cạnh State, Props, trong quá trình xậy dưng component cần đến các giá trị lưu trữ nhưng khi thay đổi không gây ra quá trình updating. Các Hook loại này đáp ưng nhu cầu đó, bao gồm:
+        \begin{enumerate}
+            \item[+] useRef: khai báo một giá trị, tuy nhiên nó thường để lưu trữ giá trị của một phần tử DOM.
+            \item[+] useImperativeHandle: giống useRef nhưng có thể tùy chỉnh xử lý khi thay đổi giá trị
+        \end{enumerate}
+        \item[-] {\textit{Effect Hook}}: chứa các yêu cầu thực thi trong vòng đời của component (tương đương với \textit{componentDidMount} + \textit{componentDidUpdate} + \textit{componentWillUnmount} trong Class Component). Bao gồm:
+        \begin{enumerate}
+            \item[+] useEffect: thường sử dụng để kết nối component với sự kiện bên ngoài.
+            \item[+] useLayoutEffect: được gọi đến trước khi cập nhật lại DOM, thường sử dụng để tính toán và xử lý bố cục.
+            \item[+] useInsertionEffect: được gọi đến trước khi React tính giá trị JSX mới cho component, thường sử dụng để chèn CSS động tại đây.
+        \end{enumerate}
+        \item[-] {\textit{Performance Hook}}: để đáp ưng nhu cầu tối ưu hóa hiệu suất trong việc định nghĩa lại các hàm, các giá trị sau mỗi lần rendering. Cụ thể lưu trữ lại các giá trị ở bộ nhớ cache và bỏ đi quá trình kết xuất dữ liệu nếu dữ liệu không thay đổi so với lần kết xuất trước. Bao gồm:
+        \begin{enumerate}
+            \item[+] useMemo: cho phep lưu trữ kết quả của một yêu cầu thực thi gây tốn hiệu năng.
+            \item[+] useCallback: cho phép lưu trữ định nghĩa các hàm.
+            \item[+] useTransition: cho phép đánh dấu một quá trình chuyển đổi trạng thái là không bị chặn và cho phép các bản cập nhật khác làm gián đoạn quá trình đó.
+            \item[+] useDeferredValue: cho phép hoãn cập nhật một phần không quan trọng của giao diện người dùng và để các phần khác cập nhật trước.
+        \end{enumerate}
+        \item[-] {\textit{Other Hook}}: Ngoài các Hook trên, React còn cung cấp một số Hook phục vụ quá trình xây dựng ứng dụng, bao gồm
+        \begin{enumerate}
+            \item[+] useDebugValue: cho phép tùy chỉnh hiển thị trên React DevTools.
+            \item[+] useId: cho phép một thành phần liên kết một ID duy nhất với chính nó. Thường được sử dụng với các API trợ năng. 
+            \item[+] useSyncExternalStore: cho phép một thành phần đăng ký vào một cửa hàng bên ngoài.
+        \end{enumerate}
+        \item[-] {\textit{Your Hook}}: Ngoài các Hook mà React cung cấp, ta hoàn toàn có thể định nghĩa các Hook cá nhân dưới dạng các hàm JavaScript. Lưu ý: vẫn phải đáp ứng yêu cầu của Hook: bắt đầu bằng "use" và được viết ở đầu trong component.
+    \end{enumerate}
+
+    \subsubsection{PropTypes}
+    Trong quá trình phát triển ứng dụng, ta có thể xảy ra một số lỗi về lỗi đánh máy, sai kiểu dữ liệu,\dots Điều này thường xảy ra do JavaScript là ngôn ngữ không có yêu cầu cao về tính hướng đối tượng.
+
+    Để khắc phục tình trạng này, tôi khuyên dùng sử dụng tiện ích PropTypes. Tiện ích này giúp định nghĩa đúng kiểu dữ liệu cho các props của component, khi sử dụng truyền sai kiểu dữ liệu, nhà phát triển sẽ nhận biết thông qua thông báo trên trình soạn thảo.
+    \begin{figure}[!ht]
+        \centering
+        \includegraphics[width=1\textwidth]{images/propTypes.png}
+        \caption{Ví dụ sử dụng PropTypes}
+    \end{figure}
+    
+    PropTypes ngừng cung cấp bởi React từ v15.5, vì vậy để sử dụng cần tài thư viện "prop-types" thay thế. Để cài đặt thư viện này, ta cần chạy dòng lệnh: "npm i prop-types".
+
+    \subsubsection{Thư viện chứa Basic Component theo chuẩn thiết kế}
+    Để xây dựng ứng dụng có thiết kế mang tính tổng quát, đem lại trải nghiệm tốt cho người dùng, ta cần đến các component mẫu chuẩn như Layout, Button, Icon, DatePicker,\dots và sử dụng chúng thống nhất trong cả ứng dụng.
+
+    Đối với các ứng dụng có quy mô lớn, ta hoàn toàn có thể tự xậy dựng các component mẫu trên. Tuy nhiên đối với các ứng dụng nhỏ, quá trình trên gây tốn rất nhiều thời gian, vì thiế việc sử dụng các thư viện hỗ trợ là thiết thực nhất. Hiện nay, có một số thư viện nổi tiếng đáp ưng nhu cầu trên đối với Reatc Native: Ant Design, Material Design.
+
+    \subsubsection{Axios}
+    Đối với các ứng dụng native, ngoài việc xử lý tương tác người dùng, đôi khi cần xử lý dữ liệu từ server. Axios giúp giải quyết nhu cầu này. Cụ thể, Axios là một thư viện HTTP Client dựa trên Promise dành cho node.js và trình duyệt. Nó có tính đẳng hình (tức là cùng codebase có thể chạy trong cả trình duyệt và node.js). Đối với native, Axios sử dụng module http trong node.js
 
 \subsection{Phát hành ứng dụng}
+    Sau khi xây dựng xong ứng dụng của mình, các nhà phát triển đưa sản phẩm của mình tới khách hàng. Đối với Android, nhà phát triển cần tạo file .apk (Android Package Kit).
+
+    Trong quá trình cài đặt Android Studio, ta đã cài đầy đủ môi trường. Vì vậy, ta chỉ cần thực hiện các bước sau:
+    \begin{enumerate}
+        \item[Bước 1]: Tạo một keyStore\\
+        Để tạo tệp nhị phân thực thi React Native cho Android, ta cần khóa do Java tạo. Để tạo khóa này, ta cần chạy dòng lệnh trong terminal: keytool -genkey -v -keystore <your\char`_key\char`_name>.keystore -alias <your\char`_key\char`_alias> -keyalg RSA -keysize 2048 -validity 10000.\\
+        Sau khi chạy dòng lệnh, kết quả yêu cầu nhập các thông tin về dự án, đây là nhưng thông tin yêu cầu để Java tạo key.\\
+        \begin{figure}[!ht]
+            \centering
+            \includegraphics[width=1\textwidth]{images/genkeystore.png}
+            \caption{Tạo KeyStore}
+        \end{figure}
+        Sau khi điền đầy đủ thông tin này, trên thư mục của dự án, ta thấy file <your\char`_key\char`_name>.keystore.
+        \item[Bước 2]: Thêm keyStore vào dự án\\
+        Copy file key có được từ bước 1, dán vào thư mục android/app, hoặc chạy dòng lệnh: mv my-release-key.keystore /android/app.\\
+        Sau đó cấu hình file build.gradle như sau:
+        \begin{figure}[!ht]
+            \centering
+            \includegraphics[width=1\textwidth]{images/config_buildapk.png}
+            \caption{Tạo KeyStore}
+        \end{figure}
+        \item[Bước 3]: Tạo file APK\\
+        Từ thư mục ban đầu của dự án, chạy các dòng lệnh sau:
+        \begin{enumerate}
+            \item[-] cd android
+            \item[-] gradlew assembleRelease
+            \item[-] ./gradlew assembleRelease
+        \end{enumerate}
+        Sau khi hoàn thành, nếu thành công, ta thấy file apk tại đường dẫn android/app/build/outputs/apk/app-release.apk. Đây là file giúp cài đặt ứng dụng trên thiết bị andorid.
+    \end{enumerate}

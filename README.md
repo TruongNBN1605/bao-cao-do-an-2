@@ -11,9 +11,3 @@ Thông tin Sinh viên:
 Clone:
     - báo cáo: https://github.com/TruongNBN1605/bao-cao-do-an-2.git
     - ứng dụng: 
-
-Tài liệu tham khảo:
-https://teamvietdev.com/thanh-phan-kien-truc-android/
-https://vi.wikipedia.org/wiki/React_Native
-https://reactnative.dev/docs
-https://vietnix.vn/nodejs-la-gi/
